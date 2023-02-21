@@ -10,7 +10,7 @@ async def make_request(expression):
 
 
 
-    # Split the expression into operands and operator
+
     a, op, b = expression.split()
 
     request = {'a': int(a), 'b': int(b), 'op': op, 'expression': expression}

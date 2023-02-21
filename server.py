@@ -6,11 +6,11 @@ logging.basicConfig(filename='server.log', level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s: %(message)s')
 
 async def handle_client(reader, writer):
-    # Read the request from the client
+
     request_data = await reader.read()
     request = json.loads(request_data)
 
-    # Extract the operands and operator from the request
+
     a = request['a']
     b = request['b']
     op = request['op']
@@ -19,7 +19,7 @@ async def handle_client(reader, writer):
     logging.debug('Received request: a=%s, b=%s, op=%s, expression=%s',
                   a, b, op, expression)
 
-    # Evaluate the expression and send the response
+
     if op == '+':
         result = a + b
     elif op == '-':
